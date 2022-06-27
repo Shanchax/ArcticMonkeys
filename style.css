@@ -1,0 +1,22 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(25, 1fr);
+    grid-gap: 0.3125rem;
+    height: 100%;
+    width: 100%;
+}
+
+.grid-item {
+    display: inline-grid;
+    background-color: blue;
+    border-radius: 0.3125rem;
+}
