@@ -1,7 +1,12 @@
-var curr_price = new Array(100).fill(Math.round((Math.random()*100+1)*100)/100);
+var curr_price = new Array(100).fill(0);
 var prev_price = new Array(100).fill(0);
 var percentage_change = new Array(100).fill(0);
 
+function initPrice() {
+    for(let i=0; i<100; i++) {
+        curr_price[i] = Math.round((Math.random()*100+1)*100)/100
+    }
+}
 
 
 function getPrice() {
@@ -16,16 +21,16 @@ function getPrice() {
             String(curr_price[i]) + `
         `
         if(percentage_change[i] >= 0.01) {
-            ele[i].style.backgroundColor = "green";
+            ele[i].style.color = "green";
         }
         else if(percentage_change[i] <= -0.01) {
-            ele[i].style.backgroundColor = "red";
+            ele[i].style.color = "red";
         }
         else {
-            ele[i].style.backgroundColor = "blue";
+            ele[i].style.color = "skyblue";
         }
     }
 }
 
-
+initPrice();
 setInterval(getPrice, 1000);
